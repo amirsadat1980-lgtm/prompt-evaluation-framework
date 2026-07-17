@@ -1,0 +1,4 @@
+# Optional extras. Not required to run the core framework or its tests.
+openai>=1.0      # real-model backend (pef.backends.OpenAIBackend)
+pandas>=2.0      # pef.report.to_dataframe()
+streamlit>=1.30  # optional results dashboard, see app.py

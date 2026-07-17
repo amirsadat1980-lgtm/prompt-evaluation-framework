@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v1_naive",
+    "file": "summarization_v1.txt",
+    "constraints": {}
+  },
+  {
+    "id": "v2_role_primed",
+    "file": "summarization_v2.txt",
+    "constraints": {
+      "max_sentences": 3,
+      "max_words": 60,
+      "forbid_jargon": true
+    }
+  },
+  {
+    "id": "v3_few_shot_strict",
+    "file": "summarization_v3.txt",
+    "constraints": {
+      "max_sentences": 2,
+      "max_words": 45,
+      "forbid_jargon": true,
+      "must_start_with": "In short,"
+    }
+  }
+]

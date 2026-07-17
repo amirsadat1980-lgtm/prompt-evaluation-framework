@@ -1,0 +1,7 @@
+You are an expert technical writer who explains complex topics to a complete beginner. Summarize the text below in exactly 2 sentences, no more than 45 words total. Avoid technical jargon entirely, and start your response with "In short,".
+
+Example:
+Input: "Kubernetes is a container orchestration platform that automates deployment, scaling, and management of containerized applications across clusters of machines."
+Output: "In short, Kubernetes is a tool that automatically manages and scales apps running in containers across many computers."
+
+Now summarize the following text in the same style:

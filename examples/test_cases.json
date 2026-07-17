@@ -1,0 +1,32 @@
+[
+  {
+    "id": "case_llm_latency",
+    "input_text": "Large language models answer questions by running inference across a distributed system of GPU servers. When traffic spikes, inference latency increases because requests queue up while GPUs are busy. Engineers reduce this bottleneck with quantization, a technique that shrinks a model's memory footprint so it runs faster. Another common fix is dynamic batching, which groups multiple requests together so the hardware is used more efficiently. Even with these optimizations, a single complex query can still take several seconds to return a full response. Teams continuously monitor throughput and latency to decide when it's time to add more servers.",
+    "key_facts": [
+      "inference latency increases",
+      "quantization",
+      "dynamic batching",
+      "add more servers"
+    ]
+  },
+  {
+    "id": "case_vector_rag",
+    "input_text": "Retrieval-augmented generation, or RAG, lets a language model look up relevant information before answering a question instead of relying only on what it memorized during training. The system first converts documents into vector embeddings, which are numeric representations that capture the meaning of the text. These embeddings are stored in a vector database that can quickly find the most similar documents to a given query. When a user asks a question, the system retrieves the top matching documents and inserts them into the model's context window. This approach reduces hallucinations because the model can ground its answer in real source material. It also lets teams update the knowledge base without retraining the entire model.",
+    "key_facts": [
+      "vector embeddings",
+      "vector database",
+      "reduces hallucinations",
+      "without retraining"
+    ]
+  },
+  {
+    "id": "case_prompt_engineering",
+    "input_text": "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience. Adding explicit constraints, such as a target word count or a specific persona, narrows that guesswork and improves consistency across runs. Few-shot prompting goes a step further by including one or two example input-output pairs directly in the prompt, showing the model the exact pattern to follow. Well-designed prompts also state the audience explicitly, for example asking for a summary a complete beginner could understand. Teams that treat prompts as testable, versioned artifacts catch regressions before they reach production.",
+    "key_facts": [
+      "improves consistency",
+      "few-shot prompting",
+      "state the audience explicitly",
+      "versioned artifacts"
+    ]
+  }
+]

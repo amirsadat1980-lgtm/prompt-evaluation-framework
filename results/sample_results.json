@@ -1,0 +1,194 @@
+{
+  "criteria": [
+    "accuracy",
+    "relevance",
+    "clarity",
+    "consistency",
+    "instruction_following"
+  ],
+  "results": [
+    {
+      "prompt_id": "v1_naive",
+      "composite": 0.7286,
+      "mean_scores": {
+        "accuracy": 0.5,
+        "relevance": 0.7917,
+        "clarity": 0.4501,
+        "consistency": 0.9012,
+        "instruction_following": 1.0
+      },
+      "cases": [
+        {
+          "case_id": "case_llm_latency",
+          "primary_output": "Large language models answer questions by running inference across a distributed system of GPU servers. When traffic spikes, inference latency increases because requests queue up while GPUs are busy. Teams continuously monitor throughput and latency to decide when it's time to add more servers.",
+          "all_outputs": [
+            "Large language models answer questions by running inference across a distributed system of GPU servers. When traffic spikes, inference latency increases because requests queue up while GPUs are busy. Teams continuously monitor throughput and latency to decide when it's time to add more servers.",
+            "Large language models answer questions by running inference across a distributed system of GPU servers. When traffic spikes, inference latency increases because requests queue up while GPUs are busy. Teams continuously monitor throughput and latency to decide when it's time to add more servers.",
+            "Large language models answer questions by running inference across a distributed system of GPU servers. When traffic spikes, inference latency increases because requests queue up while GPUs are busy. Teams continuously monitor throughput and latency to decide when it's time to add more servers."
+          ],
+          "scores": {
+            "accuracy": 0.5,
+            "relevance": 0.875,
+            "clarity": 0.4198,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_vector_rag",
+          "primary_output": "The system first converts documents into vector embeddings, which are numeric representations that capture the meaning of the text. These embeddings are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model.",
+          "all_outputs": [
+            "The system first converts documents into vector embeddings, which are numeric representations that capture the meaning of the text. These embeddings are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model.",
+            "These embeddings are stored in a vector database that can quickly find the most similar documents to a given query. The system first converts documents into vector embeddings, which are numeric representations that capture the meaning of the text. It also lets teams update the knowledge base without retraining the entire model.",
+            "The system first converts documents into vector embeddings, which are numeric representations that capture the meaning of the text. These embeddings are stored in a vector database that can quickly find the most similar documents to a given query. When a user asks a question, the system retrieves the top matching documents and inserts them into the model's context window."
+          ],
+          "scores": {
+            "accuracy": 0.75,
+            "relevance": 0.75,
+            "clarity": 0.4445,
+            "consistency": 0.7037,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_prompt_engineering",
+          "primary_output": "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience. Few-shot prompting goes a step further by including one or two example input-output pairs directly in the prompt, showing the model the exact pattern to follow.",
+          "all_outputs": [
+            "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience. Few-shot prompting goes a step further by including one or two example input-output pairs directly in the prompt, showing the model the exact pattern to follow.",
+            "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience. Few-shot prompting goes a step further by including one or two example input-output pairs directly in the prompt, showing the model the exact pattern to follow.",
+            "A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience. Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. Few-shot prompting goes a step further by including one or two example input-output pairs directly in the prompt, showing the model the exact pattern to follow."
+          ],
+          "scores": {
+            "accuracy": 0.25,
+            "relevance": 0.75,
+            "clarity": 0.4862,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "v2_role_primed",
+      "composite": 0.6688,
+      "mean_scores": {
+        "accuracy": 0.25,
+        "relevance": 0.7083,
+        "clarity": 0.4869,
+        "consistency": 0.899,
+        "instruction_following": 1.0
+      },
+      "cases": [
+        {
+          "case_id": "case_llm_latency",
+          "primary_output": "Large language models answer questions by running inference across a many computers of GPU servers. When traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers.",
+          "all_outputs": [
+            "Large language models answer questions by running inference across a many computers of GPU servers. When traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers.",
+            "Large language models answer questions by running inference across a many computers of GPU servers. When traffic spikes, wait time increases because requests queue up while GPUs are busy. Another common fix is dynamic batching, which groups multiple requests together so the hardware is used more efficiently.",
+            "Large language models answer questions by running inference across a many computers of GPU servers. When traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers."
+          ],
+          "scores": {
+            "accuracy": 0.25,
+            "relevance": 0.875,
+            "clarity": 0.5351,
+            "consistency": 0.697,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_vector_rag",
+          "primary_output": "The system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model.",
+          "all_outputs": [
+            "The system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model.",
+            "The system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model.",
+            "The system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query. It also lets teams update the knowledge base without retraining the entire model."
+          ],
+          "scores": {
+            "accuracy": 0.5,
+            "relevance": 0.625,
+            "clarity": 0.4684,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_prompt_engineering",
+          "primary_output": "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+          "all_outputs": [
+            "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+            "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+            "Prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience."
+          ],
+          "scores": {
+            "accuracy": 0.0,
+            "relevance": 0.625,
+            "clarity": 0.4572,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "prompt_id": "v3_few_shot_strict",
+      "composite": 0.6448,
+      "mean_scores": {
+        "accuracy": 0.1667,
+        "relevance": 0.5417,
+        "clarity": 0.5155,
+        "consistency": 1.0,
+        "instruction_following": 1.0
+      },
+      "cases": [
+        {
+          "case_id": "case_llm_latency",
+          "primary_output": "In short, when traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers.",
+          "all_outputs": [
+            "In short, when traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers.",
+            "In short, when traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers.",
+            "In short, when traffic spikes, wait time increases because requests queue up while GPUs are busy. Teams continuously monitor speed and latency to decide when it's time to add more servers."
+          ],
+          "scores": {
+            "accuracy": 0.25,
+            "relevance": 0.625,
+            "clarity": 0.6284,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_vector_rag",
+          "primary_output": "In short, the system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query.",
+          "all_outputs": [
+            "In short, the system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query.",
+            "In short, the system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query.",
+            "In short, the system first converts documents into meaning codes, which are numeric representations that capture the meaning of the text. These meaning codes are stored in a vector database that can quickly find the most similar documents to a given query."
+          ],
+          "scores": {
+            "accuracy": 0.25,
+            "relevance": 0.375,
+            "clarity": 0.4452,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        },
+        {
+          "case_id": "case_prompt_engineering",
+          "primary_output": "In short, prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+          "all_outputs": [
+            "In short, prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+            "In short, prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience.",
+            "In short, prompt engineering is the practice of designing inputs that reliably steer a language model toward the response you actually want. A naive prompt like 'summarize this' often produces inconsistent results because the model has to guess at length, tone, and audience."
+          ],
+          "scores": {
+            "accuracy": 0.0,
+            "relevance": 0.625,
+            "clarity": 0.4729,
+            "consistency": 1.0,
+            "instruction_following": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}
