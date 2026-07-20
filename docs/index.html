@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" integrity="sha384-NrKB+u6Ts6AtkIhwPixiKTzgSKNblyhlk0Sohlgar9UHUBzai/sgnNNWWd291xqt" crossorigin="anonymous"></script>
 <style>
   :root {
     --bg: #030807;
@@ -349,15 +349,20 @@ const criteria = DATA.criteria;
 const results = [...DATA.results].sort((a, b) => b.composite - a.composite);
 
 function pct(x) { return (x * 100).toFixed(0) + "%"; }
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+}
 
 // Ranking table
 const table = document.getElementById("ranking-table");
 table.innerHTML = `
-  <tr><th>Rank</th><th>Prompt</th><th>Composite</th>${criteria.map(c => `<th>${c.replace("_"," ")}</th>`).join("")}</tr>
+  <tr><th>Rank</th><th>Prompt</th><th>Composite</th>${criteria.map(c => `<th>${escapeHtml(c.replace("_"," "))}</th>`).join("")}</tr>
   ${results.map((r, i) => `
     <tr>
       <td>${i + 1}</td>
-      <td><strong>${r.prompt_id}</strong></td>
+      <td><strong>${escapeHtml(r.prompt_id)}</strong></td>
       <td><span class="badge">${pct(r.composite)}</span></td>
       ${criteria.map(c => `<td>${pct(r.mean_scores[c])}</td>`).join("")}
     </tr>
@@ -390,12 +395,12 @@ new Chart(document.getElementById("criteria-chart"), {
 const detail = document.getElementById("detail");
 detail.innerHTML = results.map(r => `
   <div class="prompt-group">
-    <h3>${r.prompt_id} <span class="badge">${pct(r.composite)}</span></h3>
+    <h3>${escapeHtml(r.prompt_id)} <span class="badge">${pct(r.composite)}</span></h3>
     ${r.cases.map(c => `
       <div class="case">
-        <div class="scoreline"><strong>${c.case_id}</strong></div>
-        <blockquote>${c.primary_output}</blockquote>
-        <div class="scoreline">${Object.entries(c.scores).map(([k, v]) => `${k.replace("_"," ")}: ${pct(v)}`).join(" · ")}</div>
+        <div class="scoreline"><strong>${escapeHtml(c.case_id)}</strong></div>
+        <blockquote>${escapeHtml(c.primary_output)}</blockquote>
+        <div class="scoreline">${Object.entries(c.scores).map(([k, v]) => `${escapeHtml(k.replace("_"," "))}: ${pct(v)}`).join(" · ")}</div>
       </div>
     `).join("")}
   </div>
